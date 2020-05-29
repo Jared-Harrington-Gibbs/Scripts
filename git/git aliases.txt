@@ -1,0 +1,8 @@
+[alias]
+        graph = log --graph --pretty=format':%C(bold yellow)%h%C(blue)%d%C(reset) - %<|(100,trunc)%C(bold white)%s%C(reset) %C(dim white)%an, %C(reset)%C(dim red)%ar%Creset'
+
+        graph = log --graph --pretty=format':%C(bold green)%h%C(blue)%d%C(reset) - %C(bold black)%s%C(reset) %C(dim black) %an, %C(reset)%C(dim red)%ar%Creset'        
+        graph-all = log --graph --pretty=format':%C(bold green)%h%C(blue)%d%C(reset) - %<|(100,trunc)%C(bold black)%s%C(reset) %C(dim black) %an, %C(reset)%C(dim red)%ar%Creset' --all
+
+        gal = log --graph --pretty=format':%C(bold green)%h%C(blue)%d%C(reset) - %<|(100,trunc)%C(bold)%s%C(reset) %C(dim) %an, %C(reset)%C(dim red)%ar%Creset' --all
+        gas = log --graph --pretty=format':%C(bold green)%h%C(blue)%d%C(reset) - %<|(100,trunc)%C(bold)%s%C(reset) %C(dim) %an, %C(reset)%C(dim red)%ar%Creset' --all --simplify-by-decoration

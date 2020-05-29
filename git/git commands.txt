@@ -1,0 +1,15 @@
+#show tracked files
+git ls-tree -r master --name-only
+
+#pretty print graph (git adog)
+git log --all --decorate --oneline --graph
+
+#merge git repo into current repo
+git fetch /path/to/project-a master; 
+git merge --allow-unrelated-histories FETCH_HEAD
+
+#revise last commit message
+git commit --amend
+
+#git a dog (graph)
+git log --all --decorate --oneline --graph
