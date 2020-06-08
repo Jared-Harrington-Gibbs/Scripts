@@ -7,7 +7,7 @@ Connect-ExchangeOnline
 #Get the mailboxes!!!!
 Write-Output "Getting a list of mailboxes in the tenant." `
 "Please be patient this can take a while."
-$mailboxList = Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox" -or RecipientTypeDetails -eq "SharedMailbox" -or RecipientTypeDetails -eq "RoomMailbox" -or RecipientTypeDetails -eq "DiscoveryMailbox"}
+[array]$mailboxList = Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox" -or RecipientTypeDetails -eq "SharedMailbox" -or RecipientTypeDetails -eq "RoomMailbox" -or RecipientTypeDetails -eq "DiscoveryMailbox"}
 
 
 
