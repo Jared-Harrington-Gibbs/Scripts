@@ -12,7 +12,7 @@ Write-Output "Getting a list of mailboxes in the tenant." `
 
 
 #Enable global audit logging
-$itemNumber = 0
+$itemNumber = 1
 foreach ($mailbox in $mailboxList)
 {
     try
