@@ -1,12 +1,17 @@
-#Install and Setup WSL
+#######################
+#Install and Setup WSL#
+#######################
+
 Enable-WindowsOptionalFeature -All -Online -NoRestart -FeatureName VirtualMachinePlatform
 Enable-WindowsOptionalFeature -All -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
 
-#Set WSL Version 2
 #need to be on the insider program
-wsl --set-default-version 2
+#wsl --set-default-version 2
 
-#Install Profile
+
+#################
+#Install Profile#
+#################
 $Profileps1 = Invoke-WebRequest -UseBasicParsing `
                                 -Uri "https://raw.githubusercontent.com/Jared-Harrington-Gibbs/Scripts/master/powershell/Profile.ps1" `
                                 -Method Get
@@ -20,16 +25,16 @@ if ($install -icontains "y") {
     New-Item -Force -Path $PROFILE -Value $Profileps1.Content -Type File
 } else {
     Write-Host "Profile not installed to $PROFILE"
-}        
+}
 
-#download powershell 7
+########################
+#Install powershell 7 #
+########################
 Invoke-WebRequest -UseBasicParsing -Method Get -Uri
 https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/PowerShell-7.0.1-win-x64.msi -OutFile
 PowerShell-7.0.1-win-x64.msi
 
-#check hash
 #should match e652a8e0f7d088106ea018d4b9e02373d4331907efa64a60dc32e097b165d8fd
 certutil -hashfile .\PowerShell-7.0.1-win-x64.msi SHA256
 
-#install powershell 7
 .\PowerShell-7.0.1-win-x64.msi
