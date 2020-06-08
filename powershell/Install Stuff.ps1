@@ -4,3 +4,8 @@ Enable-WindowsOptionalFeature -All -Online -NoRestart -FeatureName Microsoft-Win
 
 #Set WSL Version 2
 wsl --set-default-version 2
+
+#Install Profile
+$Profileps1 = Invoke-WebRequest -UseBasicParsing `
+                                -Uri "https://raw.githubusercontent.com/Jared-Harrington-Gibbs/Scripts/master/powershell/Profile.ps1" `
+                                -Method Get
