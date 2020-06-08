@@ -3,6 +3,7 @@ Enable-WindowsOptionalFeature -All -Online -NoRestart -FeatureName VirtualMachin
 Enable-WindowsOptionalFeature -All -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
 
 #Set WSL Version 2
+#need to be on the insider program
 wsl --set-default-version 2
 
 #Install Profile
@@ -16,7 +17,8 @@ Write-Host "$($Profileps1.content)" -ForegroundColor Cyan
 $install = Read-Host -Prompt "Would you like to append this profile to $($PROFILE)? y/N"
 
 if ($install -icontains "y") {
-    echo $Profileps1.Content >> $PROFILE
+  if (
+    New-Item -Force -Path $PROFILE -Value $Profileps1.Content -Type File
 } else {
     Write-Host "Profile not installed to $PROFILE"
 }        
