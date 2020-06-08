@@ -20,3 +20,13 @@ if ($install -icontains "y") {
 } else {
     Write-Host "Profile not installed to $PROFILE"
 }        
+
+#install powershell 7
+Invoke-WebRequest -UseBasicParsing -Method Get -Uri
+https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/PowerShell-7.0.1-win-x64.msi -OutFile
+PowerShell-7.0.1-win-x64.msi
+
+#should match e652a8e0f7d088106ea018d4b9e02373d4331907efa64a60dc32e097b165d8fd
+certutil -hashfile .\PowerShell-7.0.1-win-x64.msi SHA256
+
+.\PowerShell-7.0.1-win-x64.msi
