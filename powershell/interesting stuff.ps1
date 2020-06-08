@@ -31,3 +31,20 @@ foreach($program in $programs){
     }
     $app.Uninstall()
 }
+
+
+#find into about what/where modules/commands are from
+Get-Command -Module PowerShellGet
+Get-Command -Module PackageManagement
+Get-Command install-module | select ModuleName
+Get-InstalledModule
+Get-Module
+
+#Make lists unlimited lenght!!!
+$FormatEnumerationLimit=-1
+
+#change layout Hotkey from ctrl+shift to left alt+shift
+set-ItemProperty 'HKCU:\Keyboard Layout\Toggle\' -Name "Layout Hotkey" -Value 1
+
+#change Language Input Hotkey from left alt+shift to disabled
+Set-ItemProperty 'HKCU:\Keyboard Layout\Toggle\' -Name "Language Hotkey" -Value 3
