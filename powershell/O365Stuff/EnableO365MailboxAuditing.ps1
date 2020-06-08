@@ -1,3 +1,4 @@
+#Copied the now deleted EnableMailboxAuditing.ps1 from the OfficeDev repo. OfficeDev/O365-InvestigationTooling@9e79333
 #This script will enable non-owner mailbox access auditing on every mailbox in your tenancy
 
 #This gets us connected to an Exchange remote powershell service
