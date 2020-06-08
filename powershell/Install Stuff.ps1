@@ -17,7 +17,6 @@ Write-Host "$($Profileps1.content)" -ForegroundColor Cyan
 $install = Read-Host -Prompt "Would you like to append this profile to $($PROFILE)? y/N"
 
 if ($install -icontains "y") {
-  if (
     New-Item -Force -Path $PROFILE -Value $Profileps1.Content -Type File
 } else {
     Write-Host "Profile not installed to $PROFILE"
