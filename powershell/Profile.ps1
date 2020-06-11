@@ -1,3 +1,5 @@
+###This is paste friendly if your system doesn't support running script###
+
 #Stop annoying bell when pressing backspace on empty prompt
 Set-PSReadlineOption -BellStyle None
 
