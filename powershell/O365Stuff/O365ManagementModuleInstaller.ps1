@@ -1,6 +1,7 @@
 #SharePoint Online Management Shell
 #https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online?view=sharepoint-ps
 Install-Module -Name Microsoft.Online.SharePoint.PowerShell -Force #-Scope CurrentUser
+Install-Module -Name SharePointPnPPowerShellOnline -Force -AllowClobber
 
 #Newest Azure Active Directory Preview PowerShell module
 #Uninstall-Module AzureAD
