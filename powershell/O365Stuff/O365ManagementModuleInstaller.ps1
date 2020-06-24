@@ -29,4 +29,8 @@ Install-Module -Name MicrosoftTeams -Force #-Scope CurrentUser
 #AllowClobber is needed because the 'AzureADPreview' dependency overrides some commands from the 'AzureAD' package
 Install-Module -Name Microsoft365DSC -AllowClobber -Force #-Scope CurrentUser 
 
+#MSCommerce module to manage user self-service license purchasing
+#https://docs.microsoft.com/en-us/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell?view=o365-worldwide
+Install-Module -Name MSCommerce -Force #-Scope CurrentUser 
+
 # TODO: Find a way to install skype online manager with powershell
