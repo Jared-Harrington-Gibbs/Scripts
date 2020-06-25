@@ -21,3 +21,5 @@ function grepHist {get-content (Get-PSReadLineOption).HistorySavePath | Select-S
 function lr {Get-ChildItem -Recurse -File |Select-Object FullName}
 function lrr {Get-ChildItem -Recurse -File |ForEach-Object {Resolve-Path $_.FullName -Relative}}
 
+# show networks and IP addresses sorted by name
+function ip {Get-NetIPAddress|select InterfaceAlias,IPAddress|Sort-Object -Property InterfaceAlias -Descending}
