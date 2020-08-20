@@ -9,7 +9,7 @@ Set-PSReadlineOption -EditMode Emacs
 #Customize default command line look/feel
 function prompt {
     $CurrentPath = Split-Path -leaf -path (Get-Location)
-    $CurrentUserName = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name|Split-Path -Leaf
+    $CurrentUserName = whoami|Split-Path -Leaf
     "($CurrentUserName): $CurrentPath> "
   }
 
