@@ -8,10 +8,15 @@ Set-PSReadlineOption -EditMode Emacs
 
 #Customize default command line look/feel
 function prompt {
+    #fallback on whoami for username check instead of windows token when in constrained language mode
+    if ($ExecutionContext.SessionState.LanguageMode -eq "ConstrainedLanguage"){
+        $CurrentUserName = whoami|Split-Path -Leaf
+    } else {
+        $CurrentUserName = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name|Split-Path -Leaf
+    }
     $CurrentPath = Split-Path -leaf -path (Get-Location)
-    $CurrentUserName = whoami|Split-Path -Leaf
     "($CurrentUserName): $CurrentPath> "
-  }
+}
 
 # add two functions for cross terminal searchable history
 function histGrep {get-content (Get-PSReadLineOption).HistorySavePath | Select-String -Pattern "$args"}
